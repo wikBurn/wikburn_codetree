@@ -9,10 +9,10 @@ def create_graph(n):
     return graph
 
 graph = create_graph(n)
-visited = [[False] * m for _ in range(n)]
+visited = [[False] * (m + 1) for _ in range(n + 1)]
 def can_go(x, y):
     global graph
-    if x < 0 or x > (m - 1) or y < 0 or y > (n - 1):
+    if x < 0 or x > (n - 1) or y < 0 or y > (m - 1):
         return False
     if visited[x][y] == True or graph[x][y] == 0:
         return False
