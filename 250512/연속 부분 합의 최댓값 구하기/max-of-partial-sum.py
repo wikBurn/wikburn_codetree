@@ -9,7 +9,7 @@ dp = [
     0
     for _ in range(n + 1)
 ]
-print(dp)
+
 
 def initialize():
     for i in range(1, n + 1):
@@ -17,11 +17,11 @@ def initialize():
     dp[1] = a[1]
 
 initialize()
-print(dp)
+
 
 for i in range (2, n+1):
     dp[i] = max(dp[i - 1] + a[i], a[i])
-print(dp)
+
 
 ans = max(dp[1:n + 1])
 print(ans)
