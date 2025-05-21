@@ -1,4 +1,5 @@
 MAX_R=200
+OFFSET=100
 n = int(input())
 segments = [tuple(map(int, input().split())) for _ in range(n)]
 
@@ -6,7 +7,8 @@ segments = [tuple(map(int, input().split())) for _ in range(n)]
 
 array=[0]*(MAX_R+1)
 for x1,x2 in segments:
-    x1,x2= abs(x1), abs(x2)
+    x1= x1+OFFSET
+    x2 = x2+OFFSET
     for i in range(x1,x2):
         array[i]+=1
 
